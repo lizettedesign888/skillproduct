@@ -78,6 +78,11 @@
     .pricing{align-items:stretch}
     .price{font-family:Figtree;font-size:56px;line-height:1;margin:18px 0}
     .price small{font:14px Inter;color:var(--ash)}
+    .price-old{font-size:26px;color:#6b7180;text-decoration:line-through;margin-right:10px;font-weight:400}
+    .promo-banner{display:flex;align-items:center;gap:14px;background:linear-gradient(90deg,#3a1414,#2a1a10);border:1px solid #6b3a2a;border-radius:12px;padding:16px 20px;margin-bottom:26px}
+    .promo-fire{font-size:28px;line-height:1}
+    .promo-banner strong{display:block;font-family:Figtree;font-size:18px;color:#ffd7a8}
+    .promo-banner span{color:#e0b89a;font-size:14px}
     .popular{display:inline-block;background:#1d438a;color:#dbe7ff;border:1px solid #3766b7;padding:5px 10px;border-radius:var(--pill);font-size:11px;margin-bottom:10px}
     .quote{font-size:21px;color:#fff;line-height:1.35}
     .faq details{background:var(--abyss);border:1px solid var(--edge);border-radius:12px;padding:19px 22px}
@@ -86,10 +91,32 @@
     footer{padding:45px 0 65px;border-top:1px solid #121a29;color:var(--ash);font-size:13px}
     .footerline{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     .tiny{font:12px "IBM Plex Mono";color:#66748e}
-    .notice{margin-top:24px;padding:14px 16px;border:1px solid #1a2d4e;border-radius:10px;background:#0b1424;color:#8996aa;font-size:12px}
+    .legal-consent{margin-top:18px;padding:18px 20px;border:1px solid #273140;background:#111722;border-radius:12px;color:var(--ash);font-size:13px;line-height:1.55;transition:border-color .2s}
+    .legal-consent.warn{border-color:#a24444}
+    .legal-consent label{display:flex;gap:10px;align-items:flex-start;margin:0 0 10px;cursor:pointer}
+    .legal-consent label:last-of-type{margin-bottom:0}
+    .legal-consent input{margin-top:4px}
+    .legal-consent a{color:#9bbaff;text-decoration:underline}
+    .consent-warning{display:none;color:#ff9b9b;font-size:12.5px;margin-top:10px}
+    .consent-warning.show{display:block}
+    .access-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+    .access-step{padding:22px;border:1px solid var(--edge);background:var(--abyss);border-radius:12px}
+    .access-step .n{font:12px "IBM Plex Mono";color:#6d9aff;margin-bottom:10px}
+    .access-step h3{font-size:17px;margin-bottom:8px}
+    .access-step p{color:var(--ash);font-size:14px;margin:0}
+    .form-card{background:var(--abyss);border:1px solid var(--edge);border-radius:var(--radius);padding:30px;margin-top:26px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+    .form-row.full{grid-template-columns:1fr}
+    label.field{display:block;font-size:13px;color:var(--ash);margin-bottom:6px}
+    input[type=text],input[type=email],select{width:100%;background:#0b1320;border:1px solid #253150;border-radius:10px;padding:12px 14px;color:#fff;font-size:15px;font-family:inherit}
+    input:focus,select:focus{outline:none;border-color:#4b7fff}
+    .form-note{color:#66748e;font-size:12.5px;margin-top:14px}
+    .form-status{margin-top:14px;font-size:14px;display:none}
+    .form-status.show{display:block}
     @media(max-width:900px){
       .navlinks{display:none}.hero{grid-template-columns:1fr;min-height:auto;padding:80px 0 40px}.hero-visual{min-height:400px}
       .grid3,.grid2{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.section{padding:75px 0}
+      .access-steps{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}
     }
     @media(max-width:560px){
       .wrap{padding:0 18px} h1{font-size:48px}.process{grid-template-columns:1fr}.hero-visual{min-height:330px}
@@ -196,7 +223,6 @@
             <div class="eyebrow">AI WORKBOOK</div>
             <h2 style="font-size:40px">Не просто смотри. <span class="blue">Собирай.</span></h2>
             <p style="color:var(--ash);font-size:16px">Рабочая тетрадь и промпты помогают превращать ответы на вопросы в реальные элементы продукта: идею, структуру, оффер, контент и сценарий воронки.</p>
-            <div class="notice">AI — ускоритель процесса, а не замена твоей экспертизе. Решения и финальная проверка остаются за тобой.</div>
           </div>
           <div class="card">
             <div class="eyebrow">Формат</div>
@@ -219,17 +245,26 @@
         <div class="section-head">
           <div class="eyebrow">Тарифы</div>
           <h2>Выбери уровень поддержки.</h2>
-          <p>На старте логичнее сделать оплату разовой: продукт имеет конкретный конечный результат. Подписку можно добавить позже как отдельный клуб обновлений.</p>
+          <p>Разовая оплата: продукт имеет конкретный конечный результат.</p>
         </div>
+
+        <div class="promo-banner">
+          <span class="promo-fire">🔥</span>
+          <div>
+            <strong>Первые 10 мест — 990 ₽</strong>
+            <span>вместо 1 390 ₽ на тариф BASE. Дальше цена возвращается к обычной.</span>
+          </div>
+        </div>
+
         <div class="grid grid2 pricing">
           <div class="card">
             <div class="eyebrow">BASE</div>
             <h3>Самостоятельный запуск</h3>
-            <div class="price">1 390 ₽ <small>разово</small></div>
+            <div class="price"><span class="price-old">1 390 ₽</span> 990 ₽ <small>разово · первые 10 мест</small></div>
             <ul>
               <li>все 8 модулей</li><li>AI-workbook</li><li>промпты</li><li>шаблоны контента</li><li>конструктор воронки</li><li>чек-листы автоматизации</li>
             </ul>
-            <a class="btn primary" style="margin-top:25px;width:100%" href="#" onclick="buy('BASE');return false">Выбрать BASE</a>
+            <a class="btn primary" style="margin-top:25px;width:100%" href="https://t.me/tribute/app?startapp=REPLACE_WITH_BASE_LINK" target="_blank" rel="noopener" data-tier="BASE" onclick="return checkConsent(event)">Выбрать BASE — 990 ₽</a>
           </div>
           <div class="card highlight">
             <span class="popular">PRO · БОЛЬШЕ ПОДДЕРЖКИ</span>
@@ -238,15 +273,57 @@
             <ul>
               <li>всё из BASE</li><li>личный разбор</li><li>проверка идеи и продукта</li><li>помощь с настройкой системы</li><li>разбор воронки</li><li>обратная связь по запуску</li>
             </ul>
-            <a class="btn accent" style="margin-top:25px;width:100%" href="#" onclick="buy('PRO');return false">Выбрать PRO →</a>
+            <a class="btn accent" style="margin-top:25px;width:100%" href="https://t.me/tribute/app?startapp=REPLACE_WITH_PRO_LINK" target="_blank" rel="noopener" data-tier="PRO" onclick="return checkConsent(event)">Выбрать PRO →</a>
           </div>
         </div>
-        <div class="legal-consent" style="margin-top:18px;padding:18px 20px;border:1px solid #273140;background:#111722;border-radius:12px;color:var(--ash);font-size:13px;line-height:1.55">
-          <label style="display:flex;gap:10px;align-items:flex-start;margin:0 0 10px;cursor:pointer"><input id="offerConsent" type="checkbox" style="margin-top:4px"><span>Я ознакомилась и принимаю <a href="legal/oferta.html" target="_blank" style="color:#9bbaff;text-decoration:underline">Публичную оферту</a>.</span></label>
-          <label style="display:flex;gap:10px;align-items:flex-start;margin:0;cursor:pointer"><input id="pdConsent" type="checkbox" style="margin-top:4px"><span>Я даю отдельное согласие на обработку персональных данных и ознакомилась с <a href="legal/privacy-policy.html" target="_blank" style="color:#9bbaff;text-decoration:underline">Политикой обработки персональных данных</a>.</span></label>
-          <p style="margin:12px 0 0;color:#778196">Для реального запуска система оплаты должна сохранять факт и время получения этих согласий. Рекламное согласие, если появится рассылка, оформляется отдельно.</p>
+
+        <div class="legal-consent" id="legalConsent">
+          <label><input id="offerConsent" type="checkbox"><span>Я ознакомилась и принимаю <a href="legal/oferta.html" target="_blank">Публичную оферту</a>.</span></label>
+          <label><input id="pdConsent" type="checkbox"><span>Я даю отдельное согласие на обработку персональных данных и ознакомилась с <a href="legal/privacy-policy.html" target="_blank">Политикой обработки персональных данных</a>.</span></label>
+          <div class="consent-warning" id="consentWarning">Отметь оба пункта, чтобы продолжить оплату.</div>
         </div>
-        <div class="notice">Кнопки покупки сейчас демонстрационные. Перед запуском замени ссылки в коде на реальный checkout-сервис и подключи сохранение согласий.</div>
+
+        <div class="access-steps">
+          <div class="access-step"><div class="n">01</div><h3>Оплата</h3><p>Нажимаешь «Выбрать BASE/PRO» и оплачиваешь тариф через платёжный сервис.</p></div>
+          <div class="access-step"><div class="n">02</div><h3>Автоматический доступ</h3><p>Сразу после оплаты бот сам добавляет в закрытый Telegram-канал — ничего вручную выдавать не нужно.</p></div>
+          <div class="access-step"><div class="n">03</div><h3>Если что-то пошло не так</h3><p>Заполни короткую форму ниже — доступ проверят и выдадут вручную.</p></div>
+        </div>
+
+        <div class="form-card" id="apply">
+          <h3 style="font-size:22px;margin-bottom:6px">Заявка на доступ</h3>
+          <p style="color:var(--ash);font-size:14px;margin:0 0 20px">Заполни, если оплатила, а доступ в канал не пришёл автоматически, либо хочешь оставить контакты заранее.</p>
+          <form id="applyForm">
+            <div class="form-row">
+              <div>
+                <label class="field" for="fldName">Имя</label>
+                <input type="text" id="fldName" required>
+              </div>
+              <div>
+                <label class="field" for="fldTelegram">Telegram (username)</label>
+                <input type="text" id="fldTelegram" placeholder="@username" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label class="field" for="fldEmail">E-mail</label>
+                <input type="email" id="fldEmail" required>
+              </div>
+              <div>
+                <label class="field" for="fldTier">Тариф</label>
+                <select id="fldTier">
+                  <option value="BASE">BASE — 1 390 ₽</option>
+                  <option value="PRO">PRO — 2 500 ₽</option>
+                </select>
+              </div>
+            </div>
+            <label style="display:flex;gap:10px;align-items:flex-start;margin:4px 0 16px;cursor:pointer;font-size:13px;color:var(--ash);line-height:1.5">
+              <input id="formPdConsent" type="checkbox" required style="margin-top:4px">
+              <span>Я принимаю <a href="legal/oferta.html" target="_blank" style="color:#9bbaff;text-decoration:underline">Оферту</a> и даю согласие на обработку персональных данных согласно <a href="legal/privacy-policy.html" target="_blank" style="color:#9bbaff;text-decoration:underline">Политике обработки персональных данных</a>.</span>
+            </label>
+            <button type="submit" class="btn accent">Отправить заявку</button>
+            <div class="form-status" id="formStatus"></div>
+          </form>
+        </div>
       </div>
     </section>
 
@@ -255,8 +332,10 @@
         <div class="section-head"><div class="eyebrow">FAQ</div><h2>Что важно знать до старта.</h2></div>
         <details><summary>Подойдёт ли курс, если у меня ещё нет продукта?</summary><p>Да. Первая часть системы начинается с выбора идеи и формулировки проблемы, а не с готового продукта.</p></details>
         <details><summary>Нужно ли хорошо разбираться в AI?</summary><p>Нет. AI используется как рабочий инструмент: по ходу курса ты получаешь готовые сценарии и промпты.</p></details>
-        <details><summary>Это гарантирует продажи?</summary><p>Нет. Курс помогает собрать продукт и систему продаж, но результат зависит от идеи, аудитории, качества предложения, контента и других факторов.</p></details>
-        <details><summary>Почему не подписка?</summary><p>Для первой версии логичнее разовая покупка: человек проходит конкретный путь и собирает систему. Регулярную подписку можно сделать позже для обновлений, новых шаблонов и разборов.</p></details>
+        <details><summary>У меня нет свободного времени на большой курс — потяну?</summary><p>Да. Система построена на компактных шагах: каждый модуль даёт конкретное действие, а не часы теории. Можно проходить в своём темпе, без привязки к датам и дедлайнам.</p></details>
+        <details><summary>У меня нет денег на дорогой курс и сложные инструменты — с чего начать?</summary><p>Именно с этого. Курс не требует вложений в сайты, рекламу или платные сервисы на старте — только Telegram и AI-инструменты, часть из которых бесплатны. Это и есть первый шаг с минимальным бюджетом.</p></details>
+        <details><summary>Как быстро придёт доступ после оплаты?</summary><p>Доступ в закрытый Telegram-канал выдаётся автоматически сразу после успешной оплаты. Если доступ не пришёл в течение нескольких минут — заполни форму заявки в блоке «Тарифы».</p></details>
+        <details><summary>Я никогда раньше не создавала свой продукт — не рано ли мне?</summary><p>Нет. Курс рассчитан именно на первый запуск: с разбора идеи и до готовой системы. Предыдущий опыт не нужен — нужна готовность пройти шаги по порядку.</p></details>
       </div>
     </section>
 
@@ -276,14 +355,57 @@
   <footer>
     <div class="wrap footerline">
       <div><strong style="color:#fff">SKILL → PRODUCT</strong><br>AI-assisted system for digital products.</div>
-      <div class="tiny">© 2026 · Григорьянц Елизавета Владиславовна · НПД<br><a href="legal/oferta.html">Оферта</a> · <a href="legal/privacy-consent.html">Согласие на ПД</a> · <a href="legal/privacy-policy.html">Политика ПД</a> · <a href="legal/parent-consent.html">Согласие законного представителя</a></div>
+      <div class="tiny">© 2026 · Григорьянц Елизавета Владиславовна · НПД<br><a href="legal/oferta.html">Оферта</a> · <a href="legal/privacy-consent.html">Согласие на ПД</a> · <a href="legal/privacy-policy.html">Политика ПД</a></div>
     </div>
   </footer>
 
   <script>
-    function buy(tier){
-      alert('Здесь будет ссылка на оплату тарифа ' + tier + '.\\n\\nЗамени функцию buy() на реальный checkout-сервис перед публикацией.');
+    function checkConsent(e){
+      var offer = document.getElementById('offerConsent');
+      var pd = document.getElementById('pdConsent');
+      var warn = document.getElementById('consentWarning');
+      var box = document.getElementById('legalConsent');
+      if(!offer.checked || !pd.checked){
+        e.preventDefault();
+        warn.classList.add('show');
+        box.classList.add('warn');
+        box.scrollIntoView({behavior:'smooth', block:'center'});
+        return false;
+      }
+      warn.classList.remove('show');
+      box.classList.remove('warn');
+      return true;
     }
+
+    document.getElementById('applyForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      var pdConsentForm = document.getElementById('formPdConsent');
+      var status = document.getElementById('formStatus');
+      if(!pdConsentForm.checked){
+        status.textContent = 'Отметь согласие на обработку персональных данных, чтобы отправить заявку.';
+        status.style.color = '#ff9b9b';
+        status.classList.add('show');
+        pdConsentForm.focus();
+        return;
+      }
+      var name = document.getElementById('fldName').value.trim();
+      var tg = document.getElementById('fldTelegram').value.trim();
+      var email = document.getElementById('fldEmail').value.trim();
+      var tier = document.getElementById('fldTier').value;
+
+      var subject = encodeURIComponent('Заявка на доступ — ' + tier);
+      var body = encodeURIComponent(
+        'Имя: ' + name + '\n' +
+        'Telegram: ' + tg + '\n' +
+        'Email: ' + email + '\n' +
+        'Тариф: ' + tier
+      );
+      window.location.href = 'mailto:lizettedesign888@gmail.com?subject=' + subject + '&body=' + body;
+
+      status.textContent = 'Открылось окно почты с заполненной заявкой — просто отправь письмо.';
+      status.style.color = '#a7f3d0';
+      status.classList.add('show');
+    });
   </script>
 </body>
 </html>

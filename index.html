@@ -35,6 +35,7 @@
 
     section{padding:var(--s16) 0}
 
+    /* Hero — HeroBanner, navy fill */
     .hero-outer{padding:40px 0 var(--s8)}
     .hero{position:relative;overflow:hidden;background:var(--navy);border-radius:var(--r-lg);padding:88px var(--s12) var(--s12)}
     .hero-glow{position:absolute;width:560px;height:560px;right:-160px;top:-160px;border-radius:50%;background:radial-gradient(circle,rgba(255,95,168,.35),transparent 65%);pointer-events:none}
@@ -62,6 +63,7 @@
     h2 i{font-family:var(--f-accent);font-style:italic;font-weight:500;text-transform:none;color:var(--pink)}
     .section-head p{color:var(--charcoal);font-size:16px;margin-top:14px;opacity:.75}
 
+    /* pain cards */
     .grid{display:grid;gap:var(--s8)}
     .grid3{grid-template-columns:repeat(3,1fr)}
     .grid2{grid-template-columns:repeat(2,1fr)}
@@ -71,6 +73,7 @@
     .pain h3{font-family:var(--f-display);font-weight:800;font-size:19px;margin:0 0 8px}
     .pain p{color:var(--charcoal);opacity:.75;font-size:14.5px;margin:0}
 
+    /* lesson-cover style cards */
     .lc{position:relative;background:var(--surface);border-radius:var(--r-md);padding:var(--s6);overflow:hidden;min-height:230px;display:flex;flex-direction:column;justify-content:space-between}
     .lc:before{content:"";position:absolute;width:220px;height:220px;right:-70px;bottom:-70px;border-radius:50%;background:var(--pink-pale);opacity:.35}
     .lc-handle{position:relative;font:600 12px var(--f-body);color:var(--stone)}
@@ -82,6 +85,7 @@
     .lc-foot{position:relative;display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-size:13px;color:var(--charcoal)}
     .lc-foot .arrow{font-size:16px}
 
+    /* pale pink editorial banner */
     .editorial{background:var(--pink-pale);border-radius:var(--r-lg);padding:var(--s12);position:relative;overflow:hidden}
     .editorial:before{content:"";position:absolute;width:340px;height:340px;right:-100px;top:-100px;border-radius:50%;background:rgba(255,255,255,.35)}
     .editorial h2{position:relative;color:var(--ink)}
@@ -89,14 +93,17 @@
     .hl{background:var(--yellow);color:var(--ink);font:italic 500 13px var(--f-body);padding:var(--s2) var(--s3);border-radius:var(--r-sm)}
     .editorial p{position:relative;color:var(--ink);opacity:.8;font-size:16px;max-width:520px;margin:18px 0 0}
 
+    /* access steps */
     .access{background:var(--surface);border-radius:var(--r-md);padding:var(--s6)}
     .access .tagnum{margin-bottom:14px}
     .access h3{font-family:var(--f-display);font-weight:800;font-size:17px;margin:0 0 8px}
     .access p{color:var(--charcoal);opacity:.75;font-size:14px;margin:0}
 
+    /* callout / disclaimer */
     .callout{background:var(--surface);border:1.5px solid var(--pink);border-radius:var(--r-md);padding:22px 26px;font-size:14.5px;color:var(--charcoal);line-height:1.6}
     .callout b{color:var(--pink)}
 
+    /* pricing */
     .promo-banner{display:flex;align-items:center;gap:16px;background:var(--navy);border-radius:var(--r-md);padding:18px 24px;margin-bottom:30px}
     .promo-banner .badge{flex:none}
     .promo-banner strong{display:block;font-family:var(--f-display);font-weight:800;font-size:17px;color:#fff}
@@ -258,16 +265,16 @@
             <ul>
               <li>весь канал открыт сразу</li><li>гайды, шаблоны, чек-листы</li><li>библиотека AI-промптов</li><li>шаблон воронки и бота</li><li>шаблон сайта</li>
             </ul>
-            <a class="btn ghost-dark" style="margin-top:26px;width:100%" href="https://t.me/tribute/app?startapp=REPLACE_WITH_BASE_LINK" target="_blank" rel="noopener" data-tier="BASE" onclick="return checkConsent(event)">Выбрать BASE — 990 ₽</a>
+            <a class="btn ghost-dark" style="margin-top:26px;width:100%" href="https://link.payform.ru/?paymentLinkId=6bed6e64-63cd-46a9-bc7d-49a67789d19c" target="_blank" rel="noopener" data-tier="BASE" onclick="return checkConsent(event)">Выбрать BASE — 990 ₽</a>
           </div>
           <div class="price-card pro">
             <span class="badge pink-fill">PRO · больше поддержки</span>
             <h3 style="margin-top:14px">Соберём систему вместе</h3>
             <div class="price">2 500 ₽ <small>разово</small></div>
             <ul>
-              <li>всё из BASE</li><li>личный разбор идеи и продукта</li><li>разбор оффера и воронки</li><li>обратная связь по запуску</li>
+              <li>всё из BASE</li><li>личная работа со мной: 3 созвона</li><li>на связи в переписке весь месяц</li><li>разбор идеи, оффера и воронки</li>
             </ul>
-            <a class="btn pink" style="margin-top:26px;width:100%" href="https://t.me/tribute/app?startapp=REPLACE_WITH_PRO_LINK" target="_blank" rel="noopener" data-tier="PRO" onclick="return checkConsent(event)">Выбрать PRO →</a>
+            <a class="btn pink" style="margin-top:26px;width:100%" href="https://link.payform.ru/?paymentLinkId=29da9dbc-104b-4f28-9c77-99f8cdd7458e" target="_blank" rel="noopener" data-tier="PRO" onclick="return checkConsent(event)">Выбрать PRO →</a>
           </div>
         </div>
 
